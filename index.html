@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Très bonne année 2013</title>
+	<link href="./demo.css" rel="stylesheet" type="text/css">
+	<script src="./lib/easeljs-0.5.0.min.js"></script>
+	<script src="./lib/mootools-core-1.4.5-full-compat.js"></script>
+	<script src="./script/global.js"></script>
+	<script src="./script/Interface.js"></script>
+	<script src="./script/Shot.js"></script>
+	<script src="./script/OverMind.js"></script>
+	<script src="./script/Mechant.js"></script>
+	
+	<script>
+	
+		global = null;
+		
+		window.addEvent('domready', function(){
+			
+			global = new Global();
+		
+			for(m = 0; m < 11; m++)
+			{
+				global.mechant[m] = [];
+			}
+		
+			global.stage = new createjs.Stage("gameCanvas");
+			
+			createjs.Ticker.addListener(global.stage);
+			
+			global.displayMainScreen();
+			
+			
+		});
+		
+		
+		
+	</script>
+</head>
+<body id="myBody">
+<!--
+<select onchange="createjs.Ticker.setFPS(Number(this.value));">
+		<option value="10">10 fps</option>
+		<option value="20">20 fps</option>
+		<option value="30">30 fps</option>
+		<option value="40">40 fps</option>
+		<option value="50">50 fps</option>
+		<option value="60" selected>60 fps</option>
+	</select>
+	<br>
+-->
+	<canvas id="gameCanvas" width="800px" height="450px">
+		Votre navigateur internet est vieux... <a href="http://www.mozilla.org/fr/firefox/features/">Laissez lui prendre sa retraite.</a><br/>Bonne Année 2013 !
+	</canvas>
+	
+	<div id="control">
+		Utilisez les flèches droite et gauche pour vous déplacer</br>
+		Tirez et détruisez tout les ennemis avec Espace</br>
+		Bientôt jouable sur terminaux tactiles
+	</div>
+	
+	<div id="credit">
+		Réalisé par Jean-Pierre Bailly</br>
+		"Space Invader" est un jeu conçu par Taïto
+	</div>
+	
+	<!--<audio id="sMusic" src="sound/RushCoilCarolOfTheBells.mp3" preload="auto"></audio>-->
+	<audio id="sBoom" src="sound/seboom.wav" preload="auto"></audio>
+	<audio id="sMechantBoom" src="sound/semechantboom.wav" preload="auto"></audio>
+	<audio id="sShot" src="sound/seshot.wav" preload="auto"></audio>
+	
+</body>
+</html>
